@@ -1,0 +1,138 @@
+1.C Program to Add Two Complex Numbers by Passing Structure to a Function
+
+#include<stdio.h>
+typedef struct
+{
+        int real,img;
+}complex;
+complex add(complex c1,complex c2)
+{
+        complex s1;
+        s1.real = c1.real + c2.real;
+        s1.img = c1.img + c2.img;
+        return (s1);
+}
+int main()
+{
+        complex c1,c2,result;
+        scanf("%d%d",&c1.real,&c1.img);
+        scanf("%d%d",&c2.real,&c2.img);
+        result = add(c1,c2);
+        printf("Sum=%d+i%d\n",result.real,result.img);
+        return 0;
+
+}
+
+OUTPUT
+user@user-Lenovo-G50-80:~$ gcc complex.c
+user@user-Lenovo-G50-80:~$ ./a.out
+5
+7
+9
+5
+Sum=14+i12
+
+2.   C Program to Store Information of Students Using Structure
+#include<stdio.h>
+struct student
+{
+        char roll[15];
+        char name[30];
+        int m[5];
+};
+int main()
+{
+        struct student s[20];
+        int n;
+        float sum,avg;
+        char grade;
+        scanf("%d",&n);
+        for(int i=0;i<n;i++)
+        {
+                sum=0;
+                scanf("%s",s[i].roll);
+                scanf("%s",s[i].name);
+                for(int j=0;j<5;j++)
+                {
+                        scanf("%d",&s[i].m[j]);
+                        sum += s[i].m[j];
+                }
+                avg = sum/5.0;
+                if(avg>50.0)
+                {
+                        grade='A';
+                }
+                else
+                {
+                        grade='B';
+                }
+                printf("roll=%s\t name=%s\t grade=%c\t",s[i].roll,s[i].name,grade);
+
+        }
+}
+                                                           
+OUTPUT
+user@user-Lenovo-G50-80:~$ gcc student.c
+user@user-Lenovo-G50-80:~$ ./a.out
+2
+577 akshitha 89 97 97 87 88
+roll=577     name=akshitha     grade=A    
+588 sreeja 88 98 99 87 88
+roll=588     name=sreeja     grade=A
+
+3.Write a C program to node with data and link using self referential structures
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    int data;
+    struct node*link;
+};
+int main()
+{
+    struct node*s;
+    s = (struct node*)malloc(sizeof(struct node));
+    s->data = 100;
+    s->link = NULL;
+    printf("data=%d\n",s->data);
+}
+
+Output
+user@user-Lenovo-G50-80:~/Desktop/dslab$ gcc node.c
+user@user-Lenovo-G50-80:~/Desktop/dslab$ ./a.out
+data=100
+
+
+4.Write a C program to node with data and two link using self referential structures
+
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+    float data;
+    struct node*prev;
+    struct node*next;
+};
+int main()
+{
+    struct node*s;
+    s=(struct node*)malloc(sizeof(struct node));
+    s->data=100;
+    s->prev=NULL;
+    s->next=NULL;
+    printf("data=%.2f\n",s->data);
+}
+    
+Output:
+user@user-Lenovo-G50-80:~/Desktop/dslab$ gcc node1.c
+user@user-Lenovo-G50-80:~/Desktop/dslab$ ./a.out
+data=100.00
+user@user-Lenovo-G50-80:~/Desktop/dslab$
+
+
+
+
+
+
+
