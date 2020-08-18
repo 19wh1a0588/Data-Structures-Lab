@@ -1,1 +1,1 @@
-# Data-Structures-Lab
+This files contains (Data Structures Lab) programs of JNTUH R18 Syllabus with solutions
